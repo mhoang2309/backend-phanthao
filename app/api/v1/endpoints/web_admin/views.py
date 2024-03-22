@@ -87,7 +87,7 @@ async def login(request: Request, payload: Login = Body(...)):
     redis: Redis = request.app.state.redis
 
     username = unidecode.unidecode(payload.username)
-    info_user: dict = tb_user.find_one({"username": username})
+    info_user: dict = tb_user.find_one({"username": username}) or {}
     if info_user.get("active") and check_password_hash(
         info_user.pop("password"), payload.password
     ):
