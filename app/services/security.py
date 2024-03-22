@@ -1,14 +1,19 @@
 from typing import Any
+from typing import Coroutine
 
 import jwt
 from fastapi import Depends
+from fastapi import Header
 from fastapi import HTTPException
 from fastapi import Request
 from fastapi.security import APIKeyHeader
 from fastapi.security import HTTPBearer
+from fastapi.security import OAuth2PasswordBearer
+from fastapi.security.http import HTTPAuthorizationCredentials
 from pydantic import ValidationError
 from redis import Redis
 from starlette.status import HTTP_401_UNAUTHORIZED
+from typing_extensions import Annotated
 
 from app.settings.config import jwt_config
 

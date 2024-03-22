@@ -1,12 +1,5 @@
 fastapi[all]==0.99.1
 <<<<<<< HEAD
-pyjwt==2.8.0
-redis==5.0.0
-loguru==0.7.0
-# fastapi-websocket-pubsub
-deepdiff==6.3.1
-pymongo==4.5.0
-=======
 loguru==0.7.0
 pydantic==1.10.14
 PyJWT==2.8.0
@@ -20,4 +13,11 @@ uvicorn==0.28.1
 Werkzeug==2.2.2
 deepdiff==6.3.1
 # fastapi-websocket-pubsub
->>>>>>> b445676237800b9fcee4fb02e59bd54a2e21b037
+=======
+pyjwt==2.8.0
+redis==5.0.0
+loguru==0.7.0
+# fastapi-websocket-pubsub
+deepdiff==6.3.1
+pymongo==4.5.0
+>>>>>>> parent of a1a8060 (Merge branch 'main' of https://github.com/mhoang2309/backend-phanthao)

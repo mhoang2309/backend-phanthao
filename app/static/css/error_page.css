@@ -1,5 +1,4 @@
 .text-center {
-<<<<<<< HEAD
     text-align: center !important;
 }
 
@@ -43,68 +42,14 @@
 
 .text-gray-800 {
     color: #5a5c69 !important;
-=======
-  text-align: center !important;
-}
-
-.error {
-  color: #5a5c69;
-  font-size: 7rem;
-  position: relative;
-  line-height: 1;
-  width: 12.5rem;
-}
-
-.mx-auto {
-  margin: auto;
-}
-
-.error:before {
-  content: attr(data-text);
-  position: absolute;
-  left: 8px;
-  text-shadow: 1px 0 #4e73df;
-  top: 0;
-  color: #5a5c69;
-  background: #f8f9fc;
-  overflow: hidden;
-  clip: rect(0, 900px, 0, 0);
-  animation: noise-anim-2 3s infinite linear alternate-reverse;
-}
-
-.error:after {
-  content: attr(data-text);
-  position: absolute;
-  left: 14px;
-  text-shadow: -1px 0 #e74a3b;
-  top: 0;
-  color: #5a5c69;
-  background: #f8f9fc;
-  overflow: hidden;
-  clip: rect(0, 900px, 0, 0);
-  animation: noise-anim 2s infinite linear alternate-reverse;
-}
-
-.text-gray-800 {
-  color: #5a5c69 !important;
->>>>>>> b445676237800b9fcee4fb02e59bd54a2e21b037
 }
 
 .mb-5,
 .my-5 {
-<<<<<<< HEAD
     margin-bottom: 3rem !important;
 }
 
 .lead {
     font-size: 1.25rem;
     font-weight: 300;
-=======
-  margin-bottom: 3rem !important;
-}
-
-.lead {
-  font-size: 1.25rem;
-  font-weight: 300;
->>>>>>> b445676237800b9fcee4fb02e59bd54a2e21b037
 }
