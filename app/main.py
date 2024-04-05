@@ -8,6 +8,7 @@ from fastapi.requests import Request
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from loguru import logger
+from starlette.responses import RedirectResponse
 from starlette.status import (HTTP_400_BAD_REQUEST, HTTP_404_NOT_FOUND,
                               HTTP_413_REQUEST_ENTITY_TOO_LARGE,
                               HTTP_429_TOO_MANY_REQUESTS,
@@ -99,13 +100,16 @@ app = get_application()
 
 
 @app.exception_handler(HTTP_400_BAD_REQUEST)
-@app.exception_handler(HTTP_404_NOT_FOUND)
+# @app.exception_handler(HTTP_404_NOT_FOUND)
 @app.exception_handler(HTTP_503_SERVICE_UNAVAILABLE)
 @app.exception_handler(HTTP_429_TOO_MANY_REQUESTS)
 @app.exception_handler(HTTP_413_REQUEST_ENTITY_TOO_LARGE)
 async def not_found_exception_handler(request: Request, exc: HTTPException):
     return http_error_handler_templates(request, exc)
 
+@app.exception_handler(HTTP_404_NOT_FOUND)
+async def redirect_response(request: Request, exc: HTTPException):
+    return RedirectResponse(url = '/')
 
 @app.middleware("http")
 async def log_requests(request: Request, call_next):
