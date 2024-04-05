@@ -29,7 +29,8 @@ class ServerConfig(BaseModel):
     PORT: int = 8000
     DEBUG: bool = True
     WORKERS: int = 1
-    PREFIX: str = ""
+    PREFIX_API: str = "/api"
+    PREFIX_WEB: str = ""
     DOCS_ROUTE: str = "/docs"
     RE_DOC_ROUTE: str = "/redoc"
 

@@ -17,6 +17,7 @@ from starlette.status import (HTTP_400_BAD_REQUEST, HTTP_404_NOT_FOUND,
 from app.api.base.errors.http_error import http_error_handler  # noqa
 from app.api.base.errors.http_error import http_error_handler_templates
 from app.api.v1.routers import api
+from app.web.v1.routers import web
 from app.settings.config import (cors_middleware_config, logging_config,
                                  server_config)
 from app.settings.events import (create_start_app_handler,
@@ -88,7 +89,8 @@ def get_application() -> FastAPI:
     application.add_exception_handler(HTTPException, http_error_handler)
 
     # application.include_router(master_router)
-    application.include_router(api, prefix=server_config.PREFIX)
+    application.include_router(api, prefix=server_config.PREFIX_API)
+    application.include_router(web, prefix=server_config.PREFIX_WEB)
 
     return application
 
